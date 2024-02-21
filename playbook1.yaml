@@ -1,0 +1,13 @@
+---
+- name: Run commands for R1
+  hosts: routers
+  gather_facts: no
+  tasks:
+    - name: Check the version for R1
+      cisco.iosxr.iosxr_command:
+        commands: show version
+      # when: ansible_facts['net_version'] == '7.9.1'
+    - name: Check interface status for R1
+      cisco.iosxr.iosxr_command:
+        commands: show ip int br
+      #  when: ansible_facts['net_version'] == '7.9.2'
