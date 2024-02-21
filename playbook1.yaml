@@ -1,6 +1,6 @@
 ---
 - name: Run commands for R1
-  hosts: routers
+  hosts: 10.66.140.201
   gather_facts: no
   tasks:
     - name: Check the version for R1
